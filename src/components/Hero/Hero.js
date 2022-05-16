@@ -2,9 +2,9 @@ import React from "react";
 import "./Hero.css";
 function Hero() {
   return (
-    <div className="container">
-      <div className="left">
-        <div className="block left">
+    <div className="hero__container">
+      <div className="block__container">
+        <div className="block">
           <h2>
             MINT <span>BLOCKx</span>{" "}
           </h2>
@@ -21,11 +21,11 @@ function Hero() {
             </h2>
           </div>
         </div>
-        <div className="button-left">
+        <div className="block__button">
           <button>Mint</button>
         </div>
       </div>
-      <div className="right">
+      <div className="block__container">
         <div className="block right">
           <h2>
             Earn<span>ings</span>
@@ -37,7 +37,7 @@ function Hero() {
             To <span>earn BX </span>hold your NFTs
           </p>
         </div>
-        <div className="button-right ">
+        <div className="block__button">
           <button>claim</button>
         </div>
       </div>

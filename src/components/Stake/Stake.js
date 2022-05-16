@@ -1,7 +1,7 @@
 import React from "react";
 import image from "../../assets/images/2.png";
-
-function Stake() {
+import "./Stake.css";
+function Stake({ nftAssets, getNftIdHandler }) {
   const data = [
     {
       id: "1",
@@ -27,21 +27,36 @@ function Stake() {
       title: "Net2Dev Web3 NFT Number #4",
       buttontext: "Buy Now",
     },
+    {
+      /* <img
+                  id={result.token_id}
+                  src={result.image_original_url}
+                  onClick={getNftIdHandler}
+                  alt=""
+                /> */
+    },
   ];
   return (
-    <div>
-      <h1>Stake My NFTs</h1>
-      <div>
-        {data.map((item, id) => {
-          return (
-            <div key={id}>
-              <img src={image} alt="NFT" />
-              <h3>
-                id:<span>{item.id}</span>
-              </h3>
-            </div>
-          );
-        })}
+    <div className="stake__container">
+      <div className="stake__text__wrapper">
+        <h1 className="stake__title">Stake My NFTs</h1>
+        <h3 className="stake__selected">
+          <span>2</span> NFTs Selected
+        </h3>
+      </div>
+
+      <div className="data__wrapper">
+        {data ? (
+          data.map((result, id) => {
+            return (
+              <div key={id} className="image__wrapper">
+                <img src={image} className="image" />
+              </div>
+            );
+          })
+        ) : (
+          <h1>No Data</h1>
+        )}
       </div>
     </div>
   );

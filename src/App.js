@@ -190,11 +190,13 @@ function App() {
 
   console.log(nftData);
   return (
-    <div>
-      <Header />
-      <Hero />
-      {/* <Stake />
-      <Unstake /> */}
+    <div className="app">
+      <div className="app__container">
+        <Header connectwallet={connectwallet} account={account} />
+        <Hero />
+        <Stake nftAssets={nftAssets} getNftIdHandler={getNftIdHandler} />
+        <Unstake />
+      </div>
     </div>
   );
 }
