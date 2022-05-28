@@ -1,28 +1,45 @@
 import React from "react";
+import Web3 from "web3";
 import "./Hero.css";
-function Hero() {
+function Hero({
+  handleTotalDecrease,
+  mint,
+  handleTotalIncrease,
+  total,
+  totalSupply,
+  maxSupply,
+  account,
+  connectwallet,
+  earnings,
+  claim,
+}) {
+  const earning = Web3.utils.fromWei(String(earnings), "ether");
   return (
     <div className="hero__container">
       <div className="block__container">
-        <div className="block">
+        <div className="block left">
           <h2>
             MINT <span>BLOCKx</span>{" "}
           </h2>
           <h3>
-            9990 / <span>10000</span>
+            {totalSupply} / <span>{maxSupply}</span>
           </h3>
           <div className="cal__wrapper">
-            <h2>
-              <span>+</span>
+            <h2 onClick={handleTotalIncrease}>
+              <span style={{ cursor: "pointer" }}>+</span>
             </h2>
-            <h2>1</h2>
+            <h2>{total}</h2>
             <h2>
-              <span>-</span>
+              <span style={{ cursor: "pointer" }} onClick={handleTotalDecrease}>
+                -
+              </span>
             </h2>
           </div>
         </div>
         <div className="block__button">
-          <button>Mint</button>
+          <button onClick={account ? mint : connectwallet}>
+            {account ? "Mint" : "Mint"}
+          </button>
         </div>
       </div>
       <div className="block__container">
@@ -31,14 +48,16 @@ function Hero() {
             Earn<span>ings</span>
           </h2>
           <h1>
-            100 <span>BX</span>
+            {/* {earnings && Web3.utils.fromWei(String(earnings), "ether")}{" "} */}
+            {(Math.round(earning * 100) / 100).toFixed(2)}
+            <span>BX</span>
           </h1>
           <p>
             To <span>earn BX </span>hold your NFTs
           </p>
         </div>
         <div className="block__button">
-          <button>claim</button>
+          <button onClick={claim}>claim</button>
         </div>
       </div>
     </div>

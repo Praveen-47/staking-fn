@@ -11,3 +11,42 @@
     margin: 0 auto;
     text-align: center;
 }
+
+button {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1199px) {
+    .app__container{
+        max-width: 1000px;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .app__container{
+        max-width: 720px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .app__container{
+        max-width: 540px
+    }
+}
+@media only screen and (max-width: 600px) {
+   .app__container{
+       width: 450px;
+       margin-right: auto;
+       margin-left: auto;
+   }
+}
+@media only screen and (max-width: 500px) {
+    .app__container{
+        width: 350px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+ }
+@media only screen and (max-width: 400px) {
+    .app__container{
+        max-width: 300px;
+    }
+}

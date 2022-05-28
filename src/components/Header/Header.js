@@ -7,7 +7,7 @@ function Header({ connectwallet, account }) {
     <div className="header">
       <img src={logo} alt="logo" className="logo" />
       <button className="button__main" onClick={connectwallet}>
-        Connect
+        {account ? "Connected" : "connect"}
       </button>
     </div>
   );
